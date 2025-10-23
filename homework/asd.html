@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личная визитка</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #0b0c10; 
+            color: #e5e5e5; 
+        }
+
+        
+        header {
+            background: #1f2833; 
+            color: #fff;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        nav a {
+            color: #66fcf1; 
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #45a29e;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 120px auto 50px;
+            background: #1f2833;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .photo {
+            flex: 1;
+            min-width: 250px;
+            background: #0b0c10;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .photo img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #66fcf1;
+        }
+
+        .info {
+            flex: 2;
+            padding: 30px;
+        }
+
+        h1, h2 {
+            color: #66fcf1;
+            margin-bottom: 10px;
+        }
+
+        .contacts p {
+            margin: 5px 0;
+        }
+
+        .skills {
+            margin-top: 20px;
+        }
+
+        .skills span {
+            background: #45a29e;
+            color: #0b0c10;
+            padding: 5px 10px;
+            border-radius: 10px;
+            margin-right: 5px;
+            font-weight: 600;
+        }
+
+        
+        section {
+            max-width: 900px;
+            margin: 50px auto;
+            background: #1f2833;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+        }
+
+        section h2 {
+            color: #66fcf1;
+            margin-bottom: 10px;
+        }
+
+        
+        footer {
+            background: #1f2833;
+            color: #c5c6c7;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        footer a {
+            color: #66fcf1;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        footer a:hover {
+            color: #45a29e;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#about">Обо мне</a>
+            <a href="#skills">Навыки</a>
+            <a href="#contact">Контакты</a>
+        </nav>
+    </header>
+
+    
+    <div class="container" id="about">
+        <div class="photo">
+            <img src="anvar.jpg" alt="Моё фото">
+            <p><strong>Алиахунов Анвар</strong></p>
+        </div>
+
+        <div class="info">
+            <h1>Обо мне</h1>
+            <p>Меня зовут Алиахунов Анвар. Я студент и начинающий программист. Интересуюсь современными технологиями, UI/UX-дизайном и созданием сайтов в тёмных стилях. Также люблю проводить время с близкими, люблю гулять с друзьями и являюсь любителем футбола</p>
+        </div>
+    </div>
+
+  
+    <section id="skills">
+        <h2>Навыки</h2>
+        <p>Мои основные навыки:</p>
+        <div class="skills">
+            <span>HTML</span>
+            <span>Python</span>
+            <span>Figma</span>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Контакты</h2>
+        <p>📧 Email: anvarito2@mail.ru</p>
+        <p>📱 Телефон: +996 504 560 670</p>
+        <p>📍 Город: Бишкек</p>
+    </section>
+
+    <footer>
+        <p>© 2025 Ваше имя. Все права защищены.</p>
+        <p>Следите за мной:
+            <a href="https://www.instagram.com/kadaici20.02?igsh=bnNpcTQxd3lkeWJm&utm_source=qr" target="_blank">Instagram</a> |
+            <a href="https://t.me/" target="_blank">Telegram</a>
+        </p>
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
+
