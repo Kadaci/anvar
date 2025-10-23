@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MobilePlus — мобильный оператор</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #0b0c10;
+            color: #e5e5e5;
+        }
+
+        header {
+            background: #1f2833;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #66fcf1;
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            color: #c5c6c7;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #66fcf1;
+        }
+
+        .btn-login {
+            background: #66fcf1;
+            color: #0b0c10;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-login:hover {
+            background: #45a29e;
+        }
+
+        .hero {
+            margin-top: 100px;
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #1f2833 50%, #0b0c10);
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            color: #66fcf1;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.1em;
+            color: #c5c6c7;
+            margin-bottom: 30px;
+        }
+
+        .hero button {
+            background: #66fcf1;
+            color: #0b0c10;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .hero button:hover {
+            background: #45a29e;
+        }
+
+        /* Тарифы */
+        .tariffs {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .tariffs h2 {
+            color: #66fcf1;
+            font-size: 2em;
+            margin-bottom: 40px;
+        }
+
+        .tariff-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .tariff-card {
+            background: #1f2833;
+            border-radius: 15px;
+            width: 250px;
+            padding: 25px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.6);
+            transition: 0.3s;
+        }
+
+        .tariff-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 25px rgba(102,252,241,0.4);
+        }
+
+        .tariff-card h3 {
+            color: #66fcf1;
+            margin-bottom: 10px;
+        }
+
+        .tariff-card p {
+            color: #c5c6c7;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .tariff-card button {
+            background: #66fcf1;
+            border: none;
+            color: #0b0c10;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .tariff-card button:hover {
+            background: #45a29e;
+        }
+
+        /* --- О нас --- */
+        .about {
+            background: #1f2833;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .about h2 {
+            color: #66fcf1;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            color: #c5c6c7;
+        }
+
+        /* Преимущества */
+        .advantages {
+            background: #0b0c10;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .advantages h2 {
+            color: #66fcf1;
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        .adv-items {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .adv-card {
+            background: #1f2833;
+            width: 250px;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.6);
+        }
+
+        .adv-card h3 {
+            color: #66fcf1;
+            margin-bottom: 10px;
+        }
+
+        .adv-card p {
+            color: #c5c6c7;
+        }
+
+        footer {
+            background: #1f2833;
+            text-align: center;
+            padding: 30px;
+            color: #c5c6c7;
+        }
+
+        footer a {
+            color: #66fcf1;
+            margin: 0 8px;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #45a29e;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://cdn-icons-png.flaticon.com/512/60/60577.png" alt="Logo" style="width:40px; margin-right:10px;">
+            MobilePlus
+        </div>
+        <nav>
+            <a href="#tariffs">Тарифы</a>
+            <a href="#about">О нас</a>
+            <a href="#advantages">Преимущества</a>
+            <a href="#contact">Контакты</a>
+        </nav>
+        <button class="btn-login">Войти</button>
+    </header>
+
+    <section class="hero">
+        <h1>Будь на связи с MobilePlus</h1>
+        <p>Надёжная связь, быстрый интернет и лучшие условия для каждого клиента.</p>
+        <button>Выбрать тариф</button>
+    </section>
+
+    <section class="tariffs" id="tariffs">
+        <h2>Наши тарифы</h2>
+        <div class="tariff-container">
+            <div class="tariff-card">
+                <h3>Старт</h3>
+                <p>
+                    <img src="https://cdn-icons-png.flaticon.com/512/1041/1041880.png" alt="Интернет" style="width:20px; vertical-align:middle; margin-right:5px;"> 5 ГБ<br>
+                    <img src="https://cdn-icons-png.flaticon.com/512/15/15914.png" alt="Звонки" style="width:20px; vertical-align:middle; margin-right:5px;"> 100 мин<br>
+                    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828817.png" alt="Цена" style="width:20px; vertical-align:middle; margin-right:5px;"> 199 сом/мес
+                </p>
+                <button>Подключить</button>
+            </div>
+            <div class="tariff-card">
+                <h3>Оптимум</h3>
+                <p>
+                    <img src="https://cdn-icons-png.flaticon.com/512/1041/1041880.png" alt="Интернет" style="width:20px; vertical-align:middle; margin-right:5px;"> 15 ГБ<br>
+                    <img src="https://cdn-icons-png.flaticon.com/512/15/15914.png" alt="Звонки" style="width:20px; vertical-align:middle; margin-right:5px;"> 300 мин<br>
+                    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828817.png" alt="Цена" style="width:20px; vertical-align:middle; margin-right:5px;"> 399 сом/мес
+                </p>
+                <button>Подключить</button>
+            </div>
+            <div class="tariff-card">
+                <h3>Премиум</h3>
+                <p>
+                    <img src="https://cdn-icons-png.flaticon.com/512/1041/1041880.png" alt="Интернет" style="width:20px; vertical-align:middle; margin-right:5px;"> Безлимит<br>
+                    <img src="https://cdn-icons-png.flaticon.com/512/15/15914.png" alt="Звонки" style="width:20px; vertical-align:middle; margin-right:5px;"> Безлимит<br>
+                    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828817.png" alt="Цена" style="width:20px; vertical-align:middle; margin-right:5px;"> 699 сом/мес
+                </p>
+                <button>Подключить</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h2>О нас</h2>
+        <p>
+            Компания <strong>MobilePlus</strong> была основана в 2015 году небольшой командой энтузиастов,
+            которые стремились сделать мобильную связь доступной, стабильной и современной.
+            Всё начиналось с идеи предложить людям качественную связь даже в самых удалённых регионах страны.
+            Сегодня MobilePlus — это один из ведущих мобильных операторов, предоставляющий услуги связи,
+            интернета и цифровых решений для частных и корпоративных клиентов.  
+            Мы гордимся тем, что растём вместе со своими пользователями и продолжаем улучшать сервис каждый день.
+        </p>
+    </section>
+
+    <section class="advantages" id="advantages">
+        <h2>Почему выбирают нас</h2>
+        <div class="adv-items">
+            <div class="adv-card">
+                <h3>Надёжная сеть</h3>
+                <p>Связь работает даже в самых отдалённых районах страны.</p>
+            </div>
+            <div class="adv-card">
+                <h3>Быстрый интернет</h3>
+                <p>Скорость 4G+ и стабильное соединение в любое время.</p>
+            </div>
+            <div class="adv-card">
+                <h3>Поддержка 24/7</h3>
+                <p>Мы всегда готовы помочь нашим клиентам.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p>📞 Контакт-центр: 777</p>
+        <p>📧 Email: info@mobileplus.kg</p>
+        <p>© 2025 MobilePlus. Все права защищены.</p>
+        <p>Следите за нами:
+            <a href="https://instagram.com/">Instagram</a> |
+            <a href="https://t.me/">Telegram</a>
+        </p>
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
